@@ -114,3 +114,12 @@ This project helps understand:
 ## Status
 
 Day 1 – Project setup and architecture planning completed.
+
+## Day 2 – API Gateway & Lambda Integration
+
+* Created the **order-handler AWS Lambda** function to process incoming order requests.
+* Implemented a basic Lambda handler to log incoming events and return a JSON response.
+* Deployed an **HTTP API using API Gateway** and integrated it with the Lambda function.
+* Created the **POST /order endpoint** to trigger the Lambda function.
+* Successfully tested the API using curl and verified execution through CloudWatch logs.
+
