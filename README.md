@@ -123,3 +123,12 @@ Day 1 – Project setup and architecture planning completed.
 * Created the **POST /order endpoint** to trigger the Lambda function.
 * Successfully tested the API using curl and verified execution through CloudWatch logs.
 
+## Day 3 – DynamoDB Integration
+
+Integrated DynamoDB to persist incoming orders.
+
+The order-handler Lambda now generates a unique orderId and stores orders in the DynamoDB table.
+
+Architecture:
+Client → API Gateway → Lambda → DynamoDB
+
