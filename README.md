@@ -126,9 +126,11 @@ Day 1 – Project setup and architecture planning completed.
 ## Day 3 – DynamoDB Integration
 
 Integrated DynamoDB to persist incoming orders.
-
 The order-handler Lambda now generates a unique orderId and stores orders in the DynamoDB table.
-
 Architecture:
 Client → API Gateway → Lambda → DynamoDB
 
+Day 4 introduces AWS Step Functions to orchestrate the order processing workflow.
+
+The order-handler Lambda now triggers the Step Functions state machine after storing the order in DynamoDB. The workflow currently includes validation and status update states.
+Architecture now includes API Gateway → Lambda → Step Functions.
