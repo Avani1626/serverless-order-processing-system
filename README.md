@@ -134,3 +134,11 @@ Day 4 introduces AWS Step Functions to orchestrate the order processing workflow
 
 The order-handler Lambda now triggers the Step Functions state machine after storing the order in DynamoDB. The workflow currently includes validation and status update states.
 Architecture now includes API Gateway → Lambda → Step Functions.
+
+## Day 5 – Inventory & Payment Processing
+
+Added two new Lambda functions: **inventory-check** and **payment-processor** to simulate real order processing steps.  
+Connected these Lambdas to the **Step Functions workflow** so orders now go through inventory verification and payment processing.  
+The payment Lambda randomly succeeds or fails to simulate real-world payment scenarios.  
+Configured **retry logic in Step Functions** so payment failures are automatically retried before failing the workflow.  
+The system now follows a microservice-style architecture with orchestrated order processing.
