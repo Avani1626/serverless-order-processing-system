@@ -142,3 +142,11 @@ Connected these Lambdas to the **Step Functions workflow** so orders now go thro
 The payment Lambda randomly succeeds or fails to simulate real-world payment scenarios.  
 Configured **retry logic in Step Functions** so payment failures are automatically retried before failing the workflow.  
 The system now follows a microservice-style architecture with orchestrated order processing.
+
+Day 6 – EventBridge Notifications
+
+Implemented event-driven architecture using Amazon EventBridge.
+Step Functions now publishes an OrderCompleted event after payment processing.
+Created a notification-service Lambda that listens for this event.
+Configured an EventBridge rule to trigger the notification Lambda automatically.
+Tested the full pipeline from workflow execution to event-triggered notifications.
