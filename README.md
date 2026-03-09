@@ -149,4 +149,11 @@ Implemented event-driven architecture using Amazon EventBridge.
 Step Functions now publishes an OrderCompleted event after payment processing.
 Created a notification-service Lambda that listens for this event.
 Configured an EventBridge rule to trigger the notification Lambda automatically.
-Tested the full pipeline from workflow execution to event-triggered notifications.
+Tested the full pipeline from workflow execution to event-triggered notificat
+
+Day 7 introduces asynchronous processing using Amazon SQS.
+
+The payment step was decoupled from the Step Functions workflow and moved to a worker-based architecture.
+Step Functions now sends payment jobs to an SQS queue.
+A payment-worker Lambda consumes messages from the queue and processes payments.
+This improves system scalability, reliability, and fault tolerance.
