@@ -157,3 +157,9 @@ The payment step was decoupled from the Step Functions workflow and moved to a w
 Step Functions now sends payment jobs to an SQS queue.
 A payment-worker Lambda consumes messages from the queue and processes payments.
 This improves system scalability, reliability, and fault tolerance.
+
+Day 8 – Dead Letter Queue (DLQ)
+Implemented a Dead Letter Queue to handle failed payment jobs.
+Configured the main SQS queue with a redrive policy to move messages after 3 failed processing attempts.
+Updated the payment worker Lambda to simulate failures for testing.
+Verified that failed messages are safely routed to the DLQ instead of being lost.
