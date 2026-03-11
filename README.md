@@ -163,3 +163,11 @@ Implemented a Dead Letter Queue to handle failed payment jobs.
 Configured the main SQS queue with a redrive policy to move messages after 3 failed processing attempts.
 Updated the payment worker Lambda to simulate failures for testing.
 Verified that failed messages are safely routed to the DLQ instead of being lost.
+
+Day 9 – Idempotent Order Processing
+
+Implemented idempotent payment processing to prevent duplicate order charges caused by SQS’s at-least-once delivery model.
+Added a DynamoDB payment-idempotency table to track processed orderId values.
+The payment-worker Lambda now checks DynamoDB before executing payment logic.
+If the orderId already exists, the worker skips processing to avoid duplicates.
+This improves system reliability and ensures safe retry handling in distributed systems.
