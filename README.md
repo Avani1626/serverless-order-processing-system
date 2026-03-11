@@ -171,3 +171,11 @@ Added a DynamoDB payment-idempotency table to track processed orderId values.
 The payment-worker Lambda now checks DynamoDB before executing payment logic.
 If the orderId already exists, the worker skips processing to avoid duplicates.
 This improves system reliability and ensures safe retry handling in distributed systems.
+
+Day 10 – Observability and Structured Logging
+
+Implemented structured JSON logging across all Lambda services to improve system observability.  
+Added correlation IDs to track each order request across the entire distributed workflow.  
+Logs from order-handler, inventory-check, payment-worker, and notification services can now be traced using a single correlation ID.  
+Used CloudWatch Logs Insights to query and visualize request flow across multiple services.  
+This enables easier debugging and monitoring of the serverless order processing pipeline.
