@@ -186,3 +186,11 @@ CloudWatch alarms were created to monitor Lambda errors, DLQ messages, and Step 
 This allows automatic detection of system issues such as payment failures.
 The system can now alert engineers when processing problems occur.
 This improves reliability and operational observability of the distributed workflow.
+
+## Day 12 – CloudWatch Monitoring Dashboard
+
+Implemented a centralized CloudWatch dashboard to monitor the health of the serverless order processing system.  
+Added metrics for Lambda errors (payment-worker), order traffic (order-handler invocations), DLQ message spikes, and Step Functions execution failures.  
+Simulated payment failures to test observability and confirm that DLQ and failure metrics update correctly.  
+Used the dashboard to understand system behavior during distributed workflow failures.  
+This step introduced real production-style monitoring for the entire serverless architecture.
