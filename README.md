@@ -179,3 +179,10 @@ Added correlation IDs to track each order request across the entire distributed 
 Logs from order-handler, inventory-check, payment-worker, and notification services can now be traced using a single correlation ID.  
 Used CloudWatch Logs Insights to query and visualize request flow across multiple services.  
 This enables easier debugging and monitoring of the serverless order processing pipeline.
+
+Day 11 focused on monitoring and alerting using CloudWatch.
+
+CloudWatch alarms were created to monitor Lambda errors, DLQ messages, and Step Functions failures.
+This allows automatic detection of system issues such as payment failures.
+The system can now alert engineers when processing problems occur.
+This improves reliability and operational observability of the distributed workflow.
