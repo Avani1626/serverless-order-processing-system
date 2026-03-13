@@ -194,3 +194,11 @@ Added metrics for Lambda errors (payment-worker), order traffic (order-handler i
 Simulated payment failures to test observability and confirm that DLQ and failure metrics update correctly.  
 Used the dashboard to understand system behavior during distributed workflow failures.  
 This step introduced real production-style monitoring for the entire serverless architecture.
+
+Day 13 – IAM Hardening
+
+Implemented least-privilege IAM policies for the order-handler Lambda by replacing overly broad permissions with specific actions like `dynamodb:PutItem` and `states:StartExecution`.  
+Removed `AmazonDynamoDBFullAccess` and `AWSStepFunctionsFullAccess` policies to improve security.  
+Tested the system to ensure the workflow still executed successfully with restricted permissions.  
+Intentionally removed `states:StartExecution` permission to trigger an `AccessDeniedException`.  
+Debugged the failure using CloudWatch Logs to understand how IAM errors appear in production systems.
