@@ -202,3 +202,11 @@ Removed `AmazonDynamoDBFullAccess` and `AWSStepFunctionsFullAccess` policies to 
 Tested the system to ensure the workflow still executed successfully with restricted permissions.  
 Intentionally removed `states:StartExecution` permission to trigger an `AccessDeniedException`.  
 Debugged the failure using CloudWatch Logs to understand how IAM errors appear in production systems.
+
+Day 14 – Terraform Infrastructure Setup
+
+Initialized Terraform to manage AWS infrastructure as code instead of manual console configuration. 
+Configured the AWS provider and created the first infrastructure resource: a DynamoDB table for orders. 
+Used `terraform init`, `terraform plan`, and `terraform apply` to provision resources safely. 
+Terraform state tracking was introduced to manage infrastructure lifecycle. 
+This marks the beginning of fully reproducible cloud infrastructure for the project.
