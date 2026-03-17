@@ -210,3 +210,13 @@ Configured the AWS provider and created the first infrastructure resource: a Dyn
 Used `terraform init`, `terraform plan`, and `terraform apply` to provision resources safely. 
 Terraform state tracking was introduced to manage infrastructure lifecycle. 
 This marks the beginning of fully reproducible cloud infrastructure for the project.
+
+Day 15 — Lambda + IAM via Terraform
+
+Provisioned an AWS Lambda function entirely using Terraform, replacing manual deployment with Infrastructure as Code.
+Configured Lambda execution using an existing IAM role and understood the role of trust policies and permissions.
+Debugged real-world IAM issues including iam and Lambda access permissions.
+Learned how Terraform interacts with AWS APIs and why permissions are critical for resource creation and validation.
+Took a major step toward fully automating the serverless architecture using reproducible infrastructure.
+
+
