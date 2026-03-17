@@ -1,14 +1,11 @@
-provider "aws"{
-    region = "us-east-1"
-}
+resource "aws_lambda_function" "order_handler" {
+  function_name = "order-handler-terraform"
 
-resource "aws_dynamodb_table" "orders"{
-    name =    "orders_terraform"
-    billing_mode = "PAY_PER_REQUEST"
-    hash_key = "order_id"
+  filename      = "../lambdas/order-handler/order-handler.zip"
+  handler       = "index.handler"
+  runtime       = "python3.12"
 
-    attribute{
-        name = "order_id"
-        type = "S"
-    }
+  role = "arn:aws:iam::368096590367:role/lambda-execution-role-manual"
+
+  source_code_hash = filebase64sha256("../lambdas/order-handler/order-handler.zip")
 }

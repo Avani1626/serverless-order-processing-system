@@ -4,8 +4,9 @@ def handler(event, context):
 
     print("Order completion event received")
 
-    order_id = event["detail"]["orderId"]
-    status = event["detail"]["status"]
+    # Safe access (prevents crashes)
+    order_id = event.get("detail", {}).get("orderId")
+    status = event.get("detail", {}).get("status")
 
     print(f"Order {order_id} status: {status}")
     print("Sending order confirmation notification")
