@@ -219,4 +219,11 @@ Debugged real-world IAM issues including iam and Lambda access permissions.
 Learned how Terraform interacts with AWS APIs and why permissions are critical for resource creation and validation.
 Took a major step toward fully automating the serverless architecture using reproducible infrastructure.
 
+## Day 16 - Step Functions via Terraform
+
+- Converted existing Step Functions workflow into Amazon States Language (JSON)
+- Deployed state machine using Terraform (aws_sfn_state_machine)
+- Integrated Lambda, SQS, and EventBridge within the workflow
+- Resolved real-world IAM issues including iam:PassRole and permissions
+- Successfully tested end-to-end execution of the workflow
 
