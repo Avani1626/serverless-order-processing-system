@@ -227,3 +227,8 @@ Took a major step toward fully automating the serverless architecture using repr
 - Resolved real-world IAM issues including iam:PassRole and permissions
 - Successfully tested end-to-end execution of the workflow
 
+## Day 17 – SQS & Dead Letter Queue (DLQ) with Terraform
+
+Provisioned SQS and Dead Letter Queue (DLQ) using Terraform to enable asynchronous processing.
+Configured redrive policy to automatically move failed messages after multiple retries.
+Tested failure handling by simulating retries and verified messages are safely stored in DLQ.
