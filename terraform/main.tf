@@ -9,3 +9,15 @@ resource "aws_lambda_function" "order_handler" {
 
   source_code_hash = filebase64sha256("../lambdas/order-handler/order-handler.zip")
 }
+
+resource "aws_sqs_queue" "order_dlq" {
+  name = "order-dlq"
+}
+resource "aws_sqs_queue" "order_queue" {
+  name = "order-queue"
+
+  redrive_policy = jsonencode({
+    deadLetterTargetArn = aws_sqs_queue.order_dlq.arn
+    maxReceiveCount     = 3
+  })
+}
