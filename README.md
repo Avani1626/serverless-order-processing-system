@@ -232,3 +232,11 @@ Took a major step toward fully automating the serverless architecture using repr
 Provisioned SQS and Dead Letter Queue (DLQ) using Terraform to enable asynchronous processing.
 Configured redrive policy to automatically move failed messages after multiple retries.
 Tested failure handling by simulating retries and verified messages are safely stored in DLQ.
+
+## Day 18 — Terraform Modularization
+
+- Refactored infrastructure into reusable modules (Lambda, SQS, DynamoDB)
+- Implemented module communication using variables and outputs
+- Removed hardcoded values for dynamic and scalable configuration
+- Imported existing DynamoDB table into Terraform state
+- Achieved clean, production-grade Infrastructure as Code structure
