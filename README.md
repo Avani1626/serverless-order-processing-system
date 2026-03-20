@@ -240,3 +240,11 @@ Tested failure handling by simulating retries and verified messages are safely s
 - Removed hardcoded values for dynamic and scalable configuration
 - Imported existing DynamoDB table into Terraform state
 - Achieved clean, production-grade Infrastructure as Code structure
+
+## 📅 Day 19 — Terraform Remote Backend
+
+- Moved Terraform state from local to S3 (remote backend)
+- Enabled versioning for safe state recovery
+- Implemented DynamoDB locking for concurrency control
+- Migrated existing state using terraform init
+- Tested real-world locking with parallel Terraform runs
