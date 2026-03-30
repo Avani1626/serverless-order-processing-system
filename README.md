@@ -248,3 +248,11 @@ Tested failure handling by simulating retries and verified messages are safely s
 - Implemented DynamoDB locking for concurrency control
 - Migrated existing state using terraform init
 - Tested real-world locking with parallel Terraform runs
+
+Day 20: Terraform CI Pipeline with GitHub Actions
+
+Implemented a CI pipeline to automatically validate Terraform code on every push. 
+Added terraform fmt and validate checks to enforce code quality. 
+Integrated terraform plan to preview infrastructure changes. 
+Configured secure AWS authentication using GitHub Secrets. 
+Established a production-ready DevOps workflow for infrastructure automation.
