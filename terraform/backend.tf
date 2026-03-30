@@ -34,7 +34,7 @@ terraform {
   backend "s3" {
     bucket         = "serverless-order-system-tf-state-avani-001"
     key            = "serverless-order-system/terraform.tfstate"
-    region         = "us-east-1"   # ✅ FIXED
+    region         = "us-east-1" # ✅ FIXED
     dynamodb_table = "terraform-lock-table"
   }
 }

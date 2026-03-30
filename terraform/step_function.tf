@@ -1,5 +1,5 @@
 resource "aws_sfn_state_machine" "order_workflow" {
-  name     = "order-workflow"
+  name = "order-workflow"
 
   role_arn = "arn:aws:iam::368096590367:role/service-role/StepFunctions-order-processing-workflow-role-4gxg8rxl1"
 
