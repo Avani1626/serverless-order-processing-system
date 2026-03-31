@@ -256,3 +256,19 @@ Added terraform fmt and validate checks to enforce code quality.
 Integrated terraform plan to preview infrastructure changes. 
 Configured secure AWS authentication using GitHub Secrets. 
 Established a production-ready DevOps workflow for infrastructure automation.
+
+## Day 20 — Terraform CI Pipeline (GitHub Actions)
+
+- Implemented CI pipeline using GitHub Actions to automate Terraform checks  
+- Added terraform fmt, init, validate, and plan to ensure code quality  
+- Configured workflow to trigger on every push to main branch  
+- Integrated pipeline with remote backend (S3 + DynamoDB locking)  
+- Improved reliability by catching infrastructure issues before deployment  
+
+## Day 21 — AI CloudOps Setup (Ollama)
+
+- Installed Ollama and set up a local LLM (phi3) to run AI models on my machine  
+- Learned how to run and interact with models directly via terminal  
+- Tested AI with cloud-related prompts (AWS, Terraform concepts)  
+- Connected Terraform code with AI for basic security analysis  
+- Took first step towards building an AI-powered CloudOps assistant  
