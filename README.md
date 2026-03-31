@@ -271,4 +271,12 @@ Established a production-ready DevOps workflow for infrastructure automation.
 - Learned how to run and interact with models directly via terminal  
 - Tested AI with cloud-related prompts (AWS, Terraform concepts)  
 - Connected Terraform code with AI for basic security analysis  
-- Took first step towards building an AI-powered CloudOps assistant  
+- Took first step towards building an AI-powered CloudOps assistant
+
+## Day 22 — Terraform AI Parser (Automation Begins)
+
+- Built Python script to automatically read all Terraform (.tf) files from project  
+- Integrated local AI (Ollama) to analyze infrastructure without manual input  
+- Implemented prompt engineering for security risk detection  
+- Converted AI output into structured JSON format for better usability  
+- Created foundation of an AI-powered CloudOps tool for infra analysis  
