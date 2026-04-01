@@ -279,4 +279,12 @@ Established a production-ready DevOps workflow for infrastructure automation.
 - Integrated local AI (Ollama) to analyze infrastructure without manual input  
 - Implemented prompt engineering for security risk detection  
 - Converted AI output into structured JSON format for better usability  
-- Created foundation of an AI-powered CloudOps tool for infra analysis  
+- Created foundation of an AI-powered CloudOps tool for infra analysis
+
+Day 23 — IAM Security Analyzer (AI + Rule-Based)
+
+Built a specialized IAM security analyzer for Terraform configurations.
+Integrated AI (Ollama) with prompt engineering for risk detection.
+Added rule-based engine for guaranteed detection of wildcard permissions.
+Implemented structured JSON output with severity classification.
+Combined AI + deterministic rules to create a production-style security tool.
