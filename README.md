@@ -288,3 +288,12 @@ Integrated AI (Ollama) with prompt engineering for risk detection.
 Added rule-based engine for guaranteed detection of wildcard permissions.
 Implemented structured JSON output with severity classification.
 Combined AI + deterministic rules to create a production-style security tool.
+
+## 🚀 Day 24 — AI Cost Analyzer
+
+Built a Terraform Cost Analyzer to detect expensive AWS resources and optimization opportunities.
+Implemented rule-based detection for high-cost components like NAT Gateway and large EC2 instances.
+Integrated AI (Ollama + phi3) for intelligent cost analysis and recommendations.
+Combined deterministic logic with LLM insights for reliable and context-aware results.
+Extended the system into a hybrid AI CloudOps tool covering both security and cost optimization.
+
