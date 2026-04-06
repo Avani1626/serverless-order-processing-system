@@ -24,7 +24,7 @@ def read_terraform_files():
 def detect_iam_risks_rule_based(tf_code):
     risks = []
 
-    if '"Action": "*"' in tf_code or '"Action":"*"' in tf_code:
+    if '"Action": "*"' in tf_code or '"Action":"*"' in tf_code or 'Action   = "*"' in tf_code:
         risks.append({
             "type": "Wildcard Action",
             "severity": "HIGH",
@@ -32,7 +32,7 @@ def detect_iam_risks_rule_based(tf_code):
             "fix": "Restrict actions to only required services"
         })
 
-    if '"Resource": "*"' in tf_code or '"Resource":"*"' in tf_code:
+    if '"Resource": "*"' in tf_code or '"Resource":"*"' in tf_code or 'Resource = "*"' in tf_code:
         risks.append({
             "type": "Wildcard Resource",
             "severity": "HIGH",
@@ -228,10 +228,26 @@ def display_cost_results(cost_risks):
         print(f"Description: {risk.get('description')}")
         print(f"Fix: {risk.get('fix')}")
         print("-" * 50)
+def calculate_score(iam_risks, cost_risks):
+    score = 100
+
+    for risk in iam_risks + cost_risks:
+        severity = risk.get("severity", "LOW")
+
+        if severity == "HIGH":
+            score -= 30
+        elif severity == "MEDIUM":
+            score -= 15
+        else:
+            score -= 5
+
+    return max(score, 0)
 
 
 # 🚀 MAIN EXECUTION
 if __name__ == "__main__":
+
+
     print("Reading Terraform files...\n")
 
     all_code = read_terraform_files()
@@ -243,26 +259,18 @@ if __name__ == "__main__":
     # 💸 COST RULES
     cost_risks = detect_cost_risks(all_code)
 
-    ai_cost_analysis = analyze_cost_with_ai(all_code)
+    # ❌ SKIP AI (to avoid hanging)
+    combined_iam = iam_rule_risks
+    combined_cost = cost_risks
 
-    # 🤖 AI IAM
-    ai_analysis = analyze_with_ai(all_code)
+    # 📊 CALCULATE SCORE
+    score = calculate_score(combined_iam, combined_cost)
 
-    # 🔥 MERGE IAM
-    if ai_analysis:
-        combined_iam = {
-            "iam_risks": iam_rule_risks + ai_analysis.get("iam_risks", [])
-        }
-    else:
-        combined_iam = {
-            "iam_risks": iam_rule_risks
-        }
-    # 🔥 MERGE COST RESULTS
-    if ai_cost_analysis:
-        combined_cost = cost_risks + ai_cost_analysis.get("cost_risks", [])
-    else:
-        combined_cost = cost_risks
-     
-    # 🖥 FINAL OUTPUT
-    display_results(combined_iam)
-    display_cost_results(cost_risks)
+    # 🖥 OUTPUT
+    print("\n🔍 AI CloudOps Analyzer Report")
+    print("----------------------------------")
+
+    display_results({"iam_risks": combined_iam})
+    display_cost_results(combined_cost)
+
+    print(f"\n📊 Cloud Health Score: {score}/100")

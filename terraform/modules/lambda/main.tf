@@ -16,3 +16,7 @@ resource "aws_lambda_function" "order_handler" {
     }
   }
 }
+resource "aws_nat_gateway" "test_nat" {
+  allocation_id = "eip-123456"
+  subnet_id     = "subnet-123456"
+}
